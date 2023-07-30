@@ -77,11 +77,116 @@ select {
 /* ========================= Custom Styles ========================= */
 
 /* ========== CSS Variables ========== */
+:root {
+  --light-red: hsl(0, 100%, 67%);
+  --orange-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-grey-blue: hsl(224, 30%, 27%);
+
+  --gradient-background-1: hsl(252, 100%, 67%);
+  --gradient-background-2: hsl(241, 81%, 54%);
+
+  --gradient-circle-1: hsla(256, 72%, 46%, 1);
+  --gradient-cicle-2: hsla(241, 72%, 46%, 0);
+}
 
 /* ========== Base Styles ========== */
 
 body {
   font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.125rem;
+}
+
+main {
+  background-color: var(--white);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+h1 {
+  color: var(--light-lavender);
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: end;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+/* ========== Result Card ========== */
+
+.result-card {
+  background-image: linear-gradient(
+    var(--gradient-background-1),
+    var(--gradient-background-2)
+  );
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  border-radius: 0 0 32px 32px;
+}
+
+.result-card p {
+  color: var(--light-lavender);
+  text-align: center;
+}
+
+.result-score-container {
+  background-image: linear-gradient(
+    var(--gradient-circle-1),
+    var(--gradient-cicle-2)
+  );
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 8rem;
+}
+
+.highlight {
+  color: var(--white);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  display: block;
+}
+
+.result-message {
+  margin-inline: 1.5rem;
+}
+
+/* ========== Summary Card ========== */
+
+.btn-continue {
+  background-color: var(--dark-grey-blue);
+  color: var(--white);
+}
+
+.btn-continue:hover {
+  background-image: linear-gradient(
+    var(--gradient-background-1),
+    var(--gradient-background-2)
+  );
 }
 
 /* ========================= Media Queriers ========================= */
@@ -92,4 +197,8 @@ body {
 
 /* desktop change at 960px */
 @media screen and (min-width: 60rem) {
+  main {
+    display: flex;
+    flex-flow: row nowrap;
+  }
 }
