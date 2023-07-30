@@ -79,13 +79,18 @@ select {
 /* ========== CSS Variables ========== */
 :root {
   --light-red: hsl(0, 100%, 67%);
+  --pale-light-red: hsl(0, 100%, 95%);
   --orange-yellow: hsl(39, 100%, 56%);
+  --pale-orange-yellow: hsl(39, 100%, 95%);
   --green-teal: hsl(166, 100%, 37%);
+  --pale-green-teal: hsl(166, 100%, 95%);
   --cobalt-blue: hsl(234, 85%, 45%);
+  --pale-cobalt-blue: hsl(234, 85%, 95%);
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
   --light-lavender: hsl(241, 100%, 89%);
   --dark-grey-blue: hsl(224, 30%, 27%);
+  --light-grey-blue: hsla(224, 30%, 27%, 0.5);
 
   --gradient-background-1: hsl(252, 100%, 67%);
   --gradient-background-2: hsl(241, 81%, 54%);
@@ -99,6 +104,11 @@ select {
 body {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 1.125rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pale-blue);
 }
 
 main {
@@ -110,7 +120,7 @@ main {
 
 h1 {
   color: var(--light-lavender);
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -119,12 +129,14 @@ h2 {
   font-size: 2rem;
 }
 
-footer {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: end;
-  align-items: center;
-  padding-top: 3rem;
+h3 {
+  color: var(--dark-grey-blue);
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* ========== Result Card ========== */
@@ -177,9 +189,61 @@ footer {
 
 /* ========== Summary Card ========== */
 
+.summary-card {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.category-wrapper {
+  display: flex;
+  margin-right: 6rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reaction {
+  color: var(--light-red);
+  background-color: var(--pale-light-red);
+}
+
+.memory {
+  color: var(--orange-yellow);
+  background-color: var(--pale-orange-yellow);
+}
+
+.verbal {
+  color: var(--green-teal);
+  background-color: var(--pale-green-teal);
+}
+
+.visual {
+  color: var(--cobalt-blue);
+  background-color: var(--pale-cobalt-blue);
+}
+
+.score {
+  color: var(--light-grey-blue);
+}
+
+.darken {
+  color: var(--dark-grey-blue);
+}
+
 .btn-continue {
   background-color: var(--dark-grey-blue);
   color: var(--white);
+  border-radius: 128px;
+  border: none;
+  padding: 1rem;
 }
 
 .btn-continue:hover {
@@ -189,16 +253,45 @@ footer {
   );
 }
 
-/* ========================= Media Queriers ========================= */
+/* ========== Footer ========== */
 
-/* tablet change at 640px */
-@media screen and (min-width: 40rem) {
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: end;
+  align-items: center;
+  padding-top: 3rem;
 }
+
+footer p {
+  color: var(--light-lavender);
+  font-size: 0.825rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--gradient-circle-1);
+}
+
+/* ========================= Media Queriers ========================= */
 
 /* desktop change at 960px */
 @media screen and (min-width: 60rem) {
   main {
     display: flex;
     flex-flow: row nowrap;
+    max-width: 46rem;
+  }
+
+  .result-card {
+    border-radius: 32px;
+    width: 50%;
+    /* margin: 2rem 0; */
+    padding-bottom: 6rem;
+    padding-top: 4rem;
+  }
+
+  .summary-card {
+    width: 50%;
   }
 }
