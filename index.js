@@ -1,7 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
-// const replaceTemplate = require("./modules/replaceTemplate");
+const replaceTemplate = require("./modules/replaceTemplate");
 
 // FILES
 const ratingInput = fs.readFileSync(`${__dirname}/data.json`, "utf-8");
@@ -17,12 +17,6 @@ const tempRatingCard = fs.readFileSync(
 );
 
 // SERVER
-const replaceTemplate = (temp, rating) => {
-  let output = temp.replace(/{%CATEGORY%}/g, rating.category);
-  output = output.replace(/{%SCORE%}/g, rating.score);
-  output = output.replace(/{%ICON%}/g, rating.icon);
-  return output;
-};
 const server = http.createServer((req, res) => {
   const pathName = req.url;
 
@@ -36,9 +30,6 @@ const server = http.createServer((req, res) => {
       .map((el) => replaceTemplate(tempRatingCard, el))
       .join("");
     const output = tempSummary.replace("{%RATINGCARD%}", resultsHtml);
-
-    console.log(resultsHtml);
-    console.log(typeof resultsHtml);
 
     res.end(output);
 
