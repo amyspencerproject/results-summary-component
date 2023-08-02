@@ -1,24 +1,28 @@
 [
   {
     "id": 101,
+    "class": "Reaction",
     "category": "Reaction",
     "score": 80,
     "icon": "./assets/images/icon-reaction.svg"
   },
   {
     "id": 102,
+    "class": "Memory",
     "category": "Memory",
     "score": 92,
     "icon": "./assets/images/icon-memory.svg"
   },
   {
     "id": 103,
+    "class": "Verbal",
     "category": "Verbal",
     "score": 61,
     "icon": "./assets/images/icon-verbal.svg"
   },
   {
     "id": 104,
+    "class": "Visual",
     "category": "Visual",
     "score": 72,
     "icon": "./assets/images/icon-visual.svg"

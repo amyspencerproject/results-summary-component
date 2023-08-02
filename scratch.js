@@ -8,6 +8,7 @@
 
 // getRating();
 
+{%CLASS%}
 
 {%CATEGORY%}
 
