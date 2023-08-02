@@ -7,3 +7,10 @@
 // };
 
 // getRating();
+
+
+{%CATEGORY%}
+
+{%SCORE%}
+
+{%ICON%}
